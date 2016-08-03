@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE map
+     PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+            "http://java.sun.com/products/javahelp/map_1_0.dtd">
+<map version="1.0" xml:lang="en-US">
+   <mapID target="item000" url="topics/Introduction.html" />
+    
+   <mapID target="item100" url="topics/tutorial/1_editor/welcome_screen.html" />
+   <mapID target="item101" url="topics/tutorial/1_editor/project_create.html" />
+   <mapID target="item102" url="topics/tutorial/1_editor/component_placement.html" />
+   <mapID target="item103" url="topics/tutorial/1_editor/component_connecting.html" />
+   <mapID target="item104" url="topics/tutorial/1_editor/network_manipulation.html" />
+   <mapID target="item105" url="topics/tutorial/1_editor/properties_setup.html" />
+   <mapID target="item106" url="topics/tutorial/1_editor/network_details.html" />
+   <mapID target="item107" url="topics/tutorial/1_editor/project_save.html" />
+   
+   <mapID target="item201" url="topics/tutorial/2_simulator/simulation_mode.html" />
+   <mapID target="item202" url="topics/tutorial/2_simulator/simulator_connecting.html" />
+   <mapID target="item203" url="topics/tutorial/2_simulator/event_recieve_list_move.html" />
+   <mapID target="item204" url="topics/tutorial/2_simulator/event_playing.html" />
+   <mapID target="item205" url="topics/tutorial/2_simulator/event_save_load.html" />
+
+   <mapID target="item301" url="topics/tutorial/3_advanced/advanced_features.html" />
+   <mapID target="item302" url="topics/tutorial/3_advanced/telnet.html" />
+   <mapID target="item303" url="topics/tutorial/3_advanced/adding_new_language.html" />
+
+   <mapID target="item401" url="topics/PSImulatorUI.html" />
+
+   <mapID target="help_icon" url="../images/window_icon.png" />
+   <mapID target="search_icon" url="../images/search.png" />
+   <mapID target="book_icon" url="../images/book.png" />
+   <mapID target="print_icon" url="../images/print.png" />
+   <mapID target="print_setup_icon" url="../images/print_setup.png" />
+   <mapID target="previous_icon" url="../images/previous.png" />
+   <mapID target="next_icon" url="../images/next.png" />
+   <mapID target="home_icon" url="../images/home.png" />
+</map>

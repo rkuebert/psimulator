@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<networkModel>
+    <cablesMap>
+        <entry>
+            <key>110</key>
+            <value idAsString="110">
+                <component1>100</component1>
+                <component2>108</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>110</id>
+                <interface1>103</interface1>
+                <interface2>109</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>93</key>
+            <value idAsString="93">
+                <component1>1</component1>
+                <component2>70</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>93</id>
+                <interface1>2</interface1>
+                <interface2>71</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>95</key>
+            <value idAsString="95">
+                <component1>87</component1>
+                <component2>70</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>95</id>
+                <interface1>88</interface1>
+                <interface2>73</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>94</key>
+            <value idAsString="94">
+                <component1>15</component1>
+                <component2>70</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>94</id>
+                <interface1>16</interface1>
+                <interface2>72</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>106</key>
+            <value idAsString="106">
+                <component1>1</component1>
+                <component2>100</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>106</id>
+                <interface1>3</interface1>
+                <interface2>102</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>63</key>
+            <value idAsString="63">
+                <component1>43</component1>
+                <component2>6</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>63</id>
+                <interface1>47</interface1>
+                <interface2>7</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>107</key>
+            <value idAsString="107">
+                <component1>98</component1>
+                <component2>6</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>107</id>
+                <interface1>99</interface1>
+                <interface2>9</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>61</key>
+            <value idAsString="61">
+                <component1>19</component1>
+                <component2>43</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>61</id>
+                <interface1>20</interface1>
+                <interface2>45</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>105</key>
+            <value idAsString="105">
+                <component1>6</component1>
+                <component2>100</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>105</id>
+                <interface1>8</interface1>
+                <interface2>101</interface2>
+            </value>
+        </entry>
+        <entry>
+            <key>60</key>
+            <value idAsString="60">
+                <component1>17</component1>
+                <component2>43</component2>
+                <delay>10</delay>
+                <hwType>CABLE_ETHERNET</hwType>
+                <id>60</id>
+                <interface1>18</interface1>
+                <interface2>44</interface2>
+            </value>
+        </entry>
+    </cablesMap>
+    <componentsMap>
+        <entry>
+            <key>17</key>
+            <value idAsString="17">
+                <defaultZoomXPos>13</defaultZoomXPos>
+                <defaultZoomYPos>1084</defaultZoomYPos>
+                <hwType>END_DEVICE_NOTEBOOK</hwType>
+                <id>17</id>
+                <interface hwComponent="17" idAsString="18">
+                    <cable>60</cable>
+                    <hwType>END_DEVICE_NOTEBOOK</hwType>
+                    <id>18</id>
+                    <ipAddress>192.168.2.3/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>EA-B9-F0-D4-98-84</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>notebook0</name>
+            </value>
+        </entry>
+        <entry>
+            <key>1</key>
+            <value idAsString="1">
+                <defaultZoomXPos>1330</defaultZoomXPos>
+                <defaultZoomYPos>578</defaultZoomYPos>
+                <hwType>LINUX_ROUTER</hwType>
+                <id>1</id>
+                <interface hwComponent="1" idAsString="2">
+                    <cable>93</cable>
+                    <hwType>LINUX_ROUTER</hwType>
+                    <id>2</id>
+                    <ipAddress>192.168.1.1/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>07-13-80-B6-DF-FD</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <interface hwComponent="1" idAsString="3">
+                    <cable>106</cable>
+                    <hwType>LINUX_ROUTER</hwType>
+                    <id>3</id>
+                    <ipAddress>147.32.100.10/30</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>2C-58-C7-3D-20-32</macAddress>
+                    <name>eth1</name>
+                </interface>
+                <interface hwComponent="1" idAsString="4">
+                    <hwType>LINUX_ROUTER</hwType>
+                    <id>4</id>
+                    <ipAddress></ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>62-77-F1-BB-01-BF</macAddress>
+                    <name>eth2</name>
+                </interface>
+                <interface hwComponent="1" idAsString="5">
+                    <hwType>LINUX_ROUTER</hwType>
+                    <id>5</id>
+                    <ipAddress></ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>60-00-16-FB-1B-7C</macAddress>
+                    <name>eth3</name>
+                </interface>
+                <name>router0</name>
+            </value>
+        </entry>
+        <entry>
+            <key>100</key>
+            <value idAsString="100">
+                <defaultZoomXPos>980</defaultZoomXPos>
+                <defaultZoomYPos>298</defaultZoomYPos>
+                <hwType>CISCO_ROUTER</hwType>
+                <id>100</id>
+                <interface hwComponent="100" idAsString="101">
+                    <cable>105</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>101</id>
+                    <ipAddress>147.32.100.1/29</ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>05-5B-D6-D7-CA-F0</macAddress>
+                    <name>FastEthernet0/0</name>
+                </interface>
+                <interface hwComponent="100" idAsString="102">
+                    <cable>106</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>102</id>
+                    <ipAddress>147.32.100.9/30</ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>ED-00-CF-82-55-5C</macAddress>
+                    <name>FastEthernet0/1</name>
+                </interface>
+                <interface hwComponent="100" idAsString="103">
+                    <cable>110</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>103</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>5E-BD-5B-8C-53-5C</macAddress>
+                    <name>FastEthernet0/2</name>
+                </interface>
+                <interface hwComponent="100" idAsString="104">
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>104</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>54-FC-2D-83-7D-F0</macAddress>
+                    <name>FastEthernet0/3</name>
+                </interface>
+                <name>Router3</name>
+            </value>
+        </entry>
+        <entry>
+            <key>87</key>
+            <value idAsString="87">
+                <defaultZoomXPos>1828</defaultZoomXPos>
+                <defaultZoomYPos>1077</defaultZoomYPos>
+                <hwType>END_DEVICE_NOTEBOOK</hwType>
+                <id>87</id>
+                <interface hwComponent="87" idAsString="88">
+                    <cable>95</cable>
+                    <hwType>END_DEVICE_NOTEBOOK</hwType>
+                    <id>88</id>
+                    <ipAddress>192.168.1.3/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>76-87-DE-00-24-9E</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>notebook3</name>
+            </value>
+        </entry>
+        <entry>
+            <key>70</key>
+            <value idAsString="70">
+                <defaultZoomXPos>1610</defaultZoomXPos>
+                <defaultZoomYPos>859</defaultZoomYPos>
+                <hwType>LINUX_SWITCH</hwType>
+                <id>70</id>
+                <interface hwComponent="70" idAsString="71">
+                    <cable>93</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>71</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth0</name>
+                </interface>
+                <interface hwComponent="70" idAsString="72">
+                    <cable>94</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>72</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth1</name>
+                </interface>
+                <interface hwComponent="70" idAsString="73">
+                    <cable>95</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>73</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth2</name>
+                </interface>
+                <interface hwComponent="70" idAsString="74">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>74</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth3</name>
+                </interface>
+                <interface hwComponent="70" idAsString="75">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>75</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth4</name>
+                </interface>
+                <interface hwComponent="70" idAsString="76">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>76</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth5</name>
+                </interface>
+                <interface hwComponent="70" idAsString="77">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>77</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth6</name>
+                </interface>
+                <interface hwComponent="70" idAsString="78">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>78</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth7</name>
+                </interface>
+                <interface hwComponent="70" idAsString="79">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>79</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth8</name>
+                </interface>
+                <interface hwComponent="70" idAsString="80">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>80</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth9</name>
+                </interface>
+                <interface hwComponent="70" idAsString="81">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>81</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth10</name>
+                </interface>
+                <interface hwComponent="70" idAsString="82">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>82</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth11</name>
+                </interface>
+                <interface hwComponent="70" idAsString="83">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>83</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth12</name>
+                </interface>
+                <interface hwComponent="70" idAsString="84">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>84</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth13</name>
+                </interface>
+                <interface hwComponent="70" idAsString="85">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>85</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth14</name>
+                </interface>
+                <interface hwComponent="70" idAsString="86">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>86</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth15</name>
+                </interface>
+                <name>switch2</name>
+            </value>
+        </entry>
+        <entry>
+            <key>19</key>
+            <value idAsString="19">
+                <defaultZoomXPos>407</defaultZoomXPos>
+                <defaultZoomYPos>1104</defaultZoomYPos>
+                <hwType>END_DEVICE_NOTEBOOK</hwType>
+                <id>19</id>
+                <interface hwComponent="19" idAsString="20">
+                    <cable>61</cable>
+                    <hwType>END_DEVICE_NOTEBOOK</hwType>
+                    <id>20</id>
+                    <ipAddress>192.168.2.2/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>BE-75-08-06-C9-7C</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>notebook1</name>
+            </value>
+        </entry>
+        <entry>
+            <key>98</key>
+            <value idAsString="98">
+                <defaultZoomXPos>770</defaultZoomXPos>
+                <defaultZoomYPos>1063</defaultZoomYPos>
+                <hwType>END_DEVICE_PC</hwType>
+                <id>98</id>
+                <interface hwComponent="98" idAsString="99">
+                    <cable>107</cable>
+                    <hwType>END_DEVICE_PC</hwType>
+                    <id>99</id>
+                    <ipAddress>172.16.0.2/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>D6-E7-1C-B7-6D-E9</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>pc4</name>
+            </value>
+        </entry>
+        <entry>
+            <key>6</key>
+            <value idAsString="6">
+                <defaultZoomXPos>560</defaultZoomXPos>
+                <defaultZoomYPos>578</defaultZoomYPos>
+                <hwType>CISCO_ROUTER</hwType>
+                <id>6</id>
+                <interface hwComponent="6" idAsString="7">
+                    <cable>63</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>7</id>
+                    <ipAddress>192.168.2.1/24</ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>81-E7-1F-3B-DE-2B</macAddress>
+                    <name>FastEthernet0/0</name>
+                </interface>
+                <interface hwComponent="6" idAsString="8">
+                    <cable>105</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>8</id>
+                    <ipAddress>147.32.100.2/29</ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>6E-6D-E5-3A-25-E6</macAddress>
+                    <name>FastEthernet0/1</name>
+                </interface>
+                <interface hwComponent="6" idAsString="9">
+                    <cable>107</cable>
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>9</id>
+                    <ipAddress>172.16.0.1/24</ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>C7-6C-55-D8-E3-C7</macAddress>
+                    <name>FastEthernet0/2</name>
+                </interface>
+                <interface hwComponent="6" idAsString="10">
+                    <hwType>CISCO_ROUTER</hwType>
+                    <id>10</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress>C0-3F-16-8B-41-0E</macAddress>
+                    <name>FastEthernet0/3</name>
+                </interface>
+                <name>Router1</name>
+            </value>
+        </entry>
+        <entry>
+            <key>43</key>
+            <value idAsString="43">
+                <defaultZoomXPos>280</defaultZoomXPos>
+                <defaultZoomYPos>859</defaultZoomYPos>
+                <hwType>LINUX_SWITCH</hwType>
+                <id>43</id>
+                <interface hwComponent="43" idAsString="44">
+                    <cable>60</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>44</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth0</name>
+                </interface>
+                <interface hwComponent="43" idAsString="45">
+                    <cable>61</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>45</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth1</name>
+                </interface>
+                <interface hwComponent="43" idAsString="46">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>46</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth2</name>
+                </interface>
+                <interface hwComponent="43" idAsString="47">
+                    <cable>63</cable>
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>47</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth3</name>
+                </interface>
+                <interface hwComponent="43" idAsString="48">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>48</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth4</name>
+                </interface>
+                <interface hwComponent="43" idAsString="49">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>49</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth5</name>
+                </interface>
+                <interface hwComponent="43" idAsString="50">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>50</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth6</name>
+                </interface>
+                <interface hwComponent="43" idAsString="51">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>51</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth7</name>
+                </interface>
+                <interface hwComponent="43" idAsString="52">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>52</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth8</name>
+                </interface>
+                <interface hwComponent="43" idAsString="53">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>53</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth9</name>
+                </interface>
+                <interface hwComponent="43" idAsString="54">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>54</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth10</name>
+                </interface>
+                <interface hwComponent="43" idAsString="55">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>55</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth11</name>
+                </interface>
+                <interface hwComponent="43" idAsString="56">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>56</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth12</name>
+                </interface>
+                <interface hwComponent="43" idAsString="57">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>57</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth13</name>
+                </interface>
+                <interface hwComponent="43" idAsString="58">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>58</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth14</name>
+                </interface>
+                <interface hwComponent="43" idAsString="59">
+                    <hwType>LINUX_SWITCH</hwType>
+                    <id>59</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth15</name>
+                </interface>
+                <name>switch1</name>
+            </value>
+        </entry>
+        <entry>
+            <key>108</key>
+            <value idAsString="108">
+                <defaultZoomXPos>980</defaultZoomXPos>
+                <defaultZoomYPos>9</defaultZoomYPos>
+                <hwType>REAL_PC</hwType>
+                <id>108</id>
+                <interface hwComponent="108" idAsString="109">
+                    <cable>110</cable>
+                    <hwType>REAL_PC</hwType>
+                    <id>109</id>
+                    <ipAddress></ipAddress>
+                    <isUp>false</isUp>
+                    <macAddress></macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>realpc0</name>
+            </value>
+        </entry>
+        <entry>
+            <key>15</key>
+            <value idAsString="15">
+                <defaultZoomXPos>1400</defaultZoomXPos>
+                <defaultZoomYPos>1063</defaultZoomYPos>
+                <hwType>END_DEVICE_PC</hwType>
+                <id>15</id>
+                <interface hwComponent="15" idAsString="16">
+                    <cable>94</cable>
+                    <hwType>END_DEVICE_PC</hwType>
+                    <id>16</id>
+                    <ipAddress>192.168.1.2/24</ipAddress>
+                    <isUp>true</isUp>
+                    <macAddress>66-49-0C-5C-59-30</macAddress>
+                    <name>eth0</name>
+                </interface>
+                <name>pc2</name>
+            </value>
+        </entry>
+    </componentsMap>
+    <id>-1</id>
+    <lastEditTimestamp>1334222925989</lastEditTimestamp>
+    <counter>
+        <nextId>117</nextId>
+        <nextMacAddress>0</nextMacAddress>
+        <nextNumberMap>
+            <entry>
+                <key>CABLE_OPTIC</key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>END_DEVICE_WORKSTATION</key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>END_DEVICE_PC</key>
+                <value>5</value>
+            </entry>
+            <entry>
+                <key>BUNDLE_OF_CABLES</key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>LINUX_SWITCH</key>
+                <value>3</value>
+            </entry>
+            <entry>
+                <key>LINUX_ROUTER</key>
+                <value>5</value>
+            </entry>
+            <entry>
+                <key>CABLE_ETHERNET</key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>REAL_PC</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>END_DEVICE_NOTEBOOK</key>
+                <value>5</value>
+            </entry>
+            <entry>
+                <key>CISCO_ROUTER</key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>CISCO_SWITCH</key>
+                <value>0</value>
+            </entry>
+        </nextNumberMap>
+    </counter>
+</networkModel>

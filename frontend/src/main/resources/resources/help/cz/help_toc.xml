@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+            "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0" xml:lang="cz-CZ">
+
+<tocitem text="Úvod" target="item000" image="topic" />
+
+<tocitem text="Tutoriály" image="chapter" >
+    <tocitem text="1. Tvorba sítě" image="chapter" >
+        <tocitem text="Úvodní obrazovka" target="item100" image="topic" />
+        <tocitem text="Vytvoření nového projektu" target="item101" image="topic" />
+        <tocitem text="Vkládání komponent na plochu" target="item102" image="topic" />
+        <tocitem text="Spojování komponent kabelem" target="item103" image="topic" />
+        <tocitem text="Manipulace se sítí" target="item104" image="topic" />
+        <tocitem text="Nastavení parametrů komponent" target="item105" image="topic" />
+        <tocitem text="Nastavení zobrazených detailů" target="item106" image="topic" />
+        <tocitem text="Uložení projektu" target="item107" image="topic" />
+    </tocitem>
+
+    <tocitem text="2. Simulační režim" image="chapter" >    
+        <tocitem text="Simulační režim" target="item201" image="topic" />
+        <tocitem text="Připojení k simulátoru" target="item202" image="topic" />
+        <tocitem text="Zachytávání událostí a pohyb v seznamu" target="item203" image="topic" />
+        <tocitem text="Přehrávání událostí" target="item204" image="topic" />
+        <tocitem text="Načtení a uložení událostí" target="item205" image="topic" />
+    </tocitem>
+
+    <tocitem text="3. Pokročilé funkce" image="chapter" > 
+        <tocitem text="Automatické rozmístění" target="item301" image="topic" />
+        <tocitem text="Telnet přístup k virtuálním zařízením" target="item302" image="topic" />
+        <tocitem text="Přidání nového jazyka" target="item303" image="topic" />
+    </tocitem>
+
+</tocitem>
+
+<tocitem text="O projektu" target="item401" image="topic" />
+
+</toc>

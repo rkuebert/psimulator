@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="English" />
+      <title>Event recieving, moving in event list</title>       <meta http-equiv="Content-language" content="en-US">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 2: Simulator mode</h3>
+            <ul>
+                <li><a href="./simulation_mode.html">Simulator mode</a></li>
+                <li><a href="./simulator_connecting.html">Connecting to simulator</a></li>
+                <li><a href="./event_recieve_list_move.html">Event recieving, moving in event list</a></li>
+                <li><a href="./event_playing.html">Event playing</a></li>
+                <li><a href="./event_save_load.html">Save / Load event list</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Event recieving, moving in event list</h1>
+
+            <h2>Event recieving</h2>
+            
+            <p>Start recieving events with <b>Capture</b> button in control panel:</p>
+            
+            <img src="../../../../images/en/capture_press.png" >
+
+            <p>New events will appear in the event list as they are recieved from network
+                simulator.</p>
+            
+            <h2>Event list description</h2>
+            
+            <p>Next screenshot shows captured events:</p>
+            
+            <img src="../../../../images/en/event_list.png" >
+            
+            <h3>Data in event list</h3>
+            
+            <p>Each row represets one captured event. Column description follows:</p>
+            
+            <ul>
+                <li><b>Time[s]</b> - timestamp of recieved packet. Always starts from 0,00.</li>
+                <li><b>From</b> - name of source device.</li>
+                <li><b>To</b> - name of destination device.</li>
+                <li><b>Type</b> - packet type.</li>
+                <li><b>Info</b> - color specific for packet type.</li>
+            </ul>
+            
+            <h2>Event detail</h2>
+            
+            <p>When some row is marked in the event list, its details are under the table:</p>
+            
+            <img src="../../../../images/en/packet_detail.png" >
+            
+            <p>There is info about source and destination <b>interfaces</b> and a <b>detailed description</b>.</p>
+      
+            <h2>Move in the event list</h2>
+
+            <p>You can enter event list with mouse click on some event. Than you can move in the list
+                with <b>up/down arrows</b> or <b>play buttons</b>:</p>
+            
+            <img src="../../../../images/play_controls.png" >
+            
+            <p>When row is selected then packet details change accordingly.</p>          
+            
+            <h2>Delete events</h2>
+            
+            <p>Events can be deleted with <b>Delete events button</b>.</p>
+            
+            <img src="../../../../images/en/event_list.png" >
+            
+            <p>Next part of this tutorial is: <a href="./event_playing.html">Event playing</a>.</p>
+        </div>
+    </body>
+</html>

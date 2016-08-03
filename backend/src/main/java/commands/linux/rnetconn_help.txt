@@ -1,0 +1,10 @@
+
+This command is not present on real linux or cisco device. It's only command of this simulator to manage connection to real network.
+The command can manage all real switchports on all simulated devices in virtual network.
+SYNOPSIS: rnetconn command options
+  The possible commands are:
+    rnetconn list                                   list all real switchports in virtual network
+    rnetconn tight device switchport_num iface      tight real switchport switchport_num on device to iface
+    rnetconn untight device switchport_num          untight switchport from its device
+    help                                            print this help and exit
+    

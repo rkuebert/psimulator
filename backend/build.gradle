@@ -1,0 +1,40 @@
+apply plugin: 'application'
+
+mainClassName = "psimulator2.Main"
+
+buildscript {
+	repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+dependencies {
+    compile project(':shared')
+		compile 'junit:junit:4.12'
+		compile 'de.schlichtherle.truezip:truezip-driver:7.5'
+		compile 'de.schlichtherle.truezip:truezip-driver-file:7.5'
+		compile 'de.schlichtherle.truezip:truezip-driver-zip:7.5'
+		compile 'de.schlichtherle.truezip:truezip-file:7.5'
+		compile 'de.schlichtherle.truezip:truezip-kernel:7.5'
+		compile 'de.schlichtherle.truezip:truezip-path:7.5'
+		compile "jnetpcap:jnetpcap:1.4.r1425-1f"
+}
+
+/*
+jar {
+    manifest {
+        attributes 'Main-Class': 'psimulator2.Main'
+    }
+}
+*/
+
+// Copy all dependencies to folder
+//task copyToLib(type: Copy) {
+//    into "$buildDir/output/lib"
+//    from configurations.runtime
+//}

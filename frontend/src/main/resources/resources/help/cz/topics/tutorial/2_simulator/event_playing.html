@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="Czech" />
+      <title>Přehrávání událostí</title>       <meta http-equiv="Content-Language" content="cz-CZ">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 2: Simualční režim</h3>
+            <ul>
+                <li><a href="./simulation_mode.html">Simulační režim</a></li>
+                <li><a href="./simulator_connecting.html">Připojení k simulátoru</a></li>
+                <li><a href="./event_recieve_list_move.html">Příjem událostí, pohyb v seznamu</a></li>
+                <li><a href="./event_playing.html">Přehrávání událostí</a></li>
+                <li><a href="./event_save_load.html">Uložení a načtení seznamu událostí</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Přehrávání událostí</h1>
+
+            <h2>Přehrávání zachycených událostí</h2>
+            
+            <p>Přehrávání spustíte tlačítkem <b>Play</b> v panelu <b>Ovládání přehrávání</b>:</p>
+            
+            <img src="../../../../images/play_button_selected.png" >
+            
+            <h3>Pohyb v seznamu událostí během přehrávání</h3>
+            
+            <p>Během přehrávání můžete volně přecházet na následující, či předchozí události tlačítky
+                v panelu <b>Ovládání přehrávání</b>, nebo <b>kliknutím myší</b> na konkrétní řádek v tabulce. </p>
+            
+            <img src="../../../../images/cz/play_controls.png" >
+            
+            <h3>Nastavení rychlosti</h3>
+            
+            <p>Rychlost přehrávání se nastavuje posuvníkem v panelu <b>Ovládání přehrávání</b>. Nastavenou
+                rychlost bude mít vždy <b>další započatá animace</b>. Stávající animace doběhne beze změny
+                rychlosti.</p>
+            
+            
+            <h3>Sekvenční přehrávání</h3>
+            
+            <p>Události je možné přehrávat <b>sekvenčně</b> (po sobě) tak aby byla simulace přehledná. V tomto režimu
+                je doba trvání animace paketu závislá na <b>nastavené rychlosti</b> a <b>doby zpoždění</b> na kabelu.</p>
+            
+            <h3>Přehrávání podle časových značek</h3>
+            
+            <p>Události je také možné přehrávat v časech, v jakých byly zaznamenány, tzn. podle <b>časových značek</b>.
+                V tomto režimu závisí délka animace opět na nastavené rychlosti a doby zpoždění na kabelu, ale může se stát,
+                že uvidíte <b>více animací najednou</b>, protože přišly v krátkých časových rozestupech.</p>
+            
+            
+            <h2>Realtime režim</h2>
+            
+            <p><b>Realtime režim</b> je zvláštní způsob <b>zachytávání</b> a <b>přehrávání</b> událostí. Události
+                jsou přehrány v tom okamžiku, kdy jsou přijaty. V tomto režimu závisí délka animace opět na 
+                nastavené rychlosti a doby zpoždění na kabelu. Na následujícím obrázku je označené tlačítko 
+                pro spuštění <b>Realtime režimu</b></p>
+            
+            <img src="../../../../images/cz/play_controls_realtime.png" >
+
+            <h2>Zachytávání ztracených paketů</h2>
+            <p>Pokud se nějaký paket na straně serveru ztratí, je tato událost také zachycena
+                a v tabulce je vidět následovně:</p>
+            
+            <img src="../../../../images/cz/event_list_with_lost_packets.png" >
+            
+            <h2>Vizualizace ztracených paketů</h2>
+            
+            <p>Na následujícím obrázku je vidět, jak jsou ztracené pakety vizualizovány:</p>
+            
+            <img src="../../../../images/lost_packet_visualization.png" >
+            
+            
+            <h2>Zachycená obrazovka animace</h2>
+            
+            <p>Animace může vypadat například takto:</p>
+            
+            <img src="../../../../images/packet_visualization.png" >
+            
+            <h2>Změna obrázku paketu</h2>
+            
+            <p>V aplikaci je možné v <b>Nastavení</b> změnit typ obrázku paketu</p>
+            
+            <img src="../../../../images/cz/packet_image_change.png" >
+            
+            <p>Další částí tutorialu je: <a href="./event_save_load.html">Uložení a načtení seznamu událostí</a>.</p>
+        </div>
+    </body>
+</html>

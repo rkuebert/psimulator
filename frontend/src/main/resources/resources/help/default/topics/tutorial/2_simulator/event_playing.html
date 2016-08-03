@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="English" />
+      <title>Event playing</title>       <meta http-equiv="Content-language" content="en-US">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 2: Simulator mode</h3>
+            <ul>
+                <li><a href="./simulation_mode.html">Simulator mode</a></li>
+                <li><a href="./simulator_connecting.html">Connecting to simulator</a></li>
+                <li><a href="./event_recieve_list_move.html">Event recieving, moving in event list</a></li>
+                <li><a href="./event_playing.html">Event playing</a></li>
+                <li><a href="./event_save_load.html">Save / Load event list</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Event playing</h1>
+
+            <h2>Playing captured events</h2>
+            
+            <p>Start playing with the <b>Play</b> button in <b>Control panel</b>:</p>
+            <img src="../../../../images/play_button_selected.png" >
+            
+            <h3>Moving in the event list while playing</h3>
+            
+            <p>You can move in the event list as you want during playing. Use the previous, next, first and last buttons
+                in <b>Play controls</b> panel, or use <b>mouse click</b> on table rows. </p>
+
+            <img src="../../../../images/en/play_controls.png" >
+            
+            <h3>Speed setting</h3>
+            
+            <p>Playing speed can be set with a slider in <b>Play controls</b> panel. New speed will be 
+                applied on next played event. Current animation wil finish in the original
+                speed.</p>
+
+            <h3>Sequential playing</h3>
+            
+            <p>You can play events <b>sequentially</b> (one by one). This mode will give you time to observe
+                events. Duration of the animation depends on <b>speed</b> and <b>cable delay</b>.</p>
+
+            <h3>Playing by timestamps</h3>
+            
+            <p>Events can be allso played in recieved times (timestamps). In this mode the animation duration
+                depends on speed and cable delay, but there could be <b>more animations at a time</b>  
+                because they were recieved in short time intervals.</p>
+
+            <h2>Realtime mode</h2>
+            
+            <p>In <b>Realtime mode</b> packets are both <b>recieved</b> and <b>played</b>. Events are played 
+                immediately when they are recieved. In this mode the duration of animation depends on speed 
+                and cable delay. On the next image the realtime button is marked:</p>
+       
+            <img src="../../../../images/en/play_controls_realtime.png" >
+
+            <h2>Capturing lost packets</h2>
+            <p>Server sometimes make some packet disappear on purpose. Those events are 
+                captured too. On the next image you can see those events in the
+                event table.</p>
+
+            <img src="../../../../images/en/event_list_with_lost_packets.png" >
+            
+            <h2>Screenshot of animation with lost packet</h2>
+            
+            <p>You can see animation of the lost pakcet on next screenshot:</p>
+            
+            <img src="../../../../images/lost_packet_visualization.png" >
+            
+            <h2>Screenshot of animation</h2>
+            
+            <p>Animation can look like this:</p>
+            
+            <img src="../../../../images/packet_visualization.png" >
+            
+            <h2>Changing the packet image</h2>
+            
+            <p>In application <b>Properties</b> you can change the packet image</p>
+            
+            <img src="../../../../images/en/packet_image_change.png" >
+            
+            <p>Next part of this tutorial is: <a href="./event_save_load.html">Save / Load event list</a>.</p>
+        </div>
+    </body>
+</html>

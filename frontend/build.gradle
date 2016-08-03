@@ -1,0 +1,26 @@
+apply plugin: 'application'
+
+mainClassName = "psimulator.Main"
+
+if (!project.hasProperty('mainClass')) {
+    ext.mainClass = mainClassName
+}
+
+buildscript {
+	repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+dependencies {
+    compile project(':shared')
+    compile project(':swingTelnet')
+		compile 'junit:junit:4.12'
+		compile group: 'net.java.timingframework', name: 'timingframework-swing', version: '4.1.0'
+		compile group: 'javax.help', name: 'javahelp', version: '2.0.05'
+}

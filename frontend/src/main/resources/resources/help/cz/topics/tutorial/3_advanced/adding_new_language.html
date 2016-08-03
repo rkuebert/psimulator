@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="Czech" />
+      <title>Přidání nového jazyka</title>       <meta http-equiv="Content-Language" content="cz-CZ">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 3: Pokročilé funkce</h3>
+            <ul>
+                <li><a href="./advanced_features.html">Automatické rozmístění</a></li>
+                <li><a href="./telnet.html">Telnet pro přístup k virtuálním zařízením</a></li>
+                <li><a href="./adding_new_language.html">Přidání nového jazyka</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Přidání nového jazyka</h1>
+
+            <p>Do aplikace je možné přidat vlastní jazyk přiložením sobuoru do 
+                <b>správného umístění</b> a ve <b>správném formátu</b>.</p>
+
+            <h2>Formát a předloha</h2>
+            
+            <p>Formát jazykového souboru vypadá následovně 
+                (předloha v adresáři Languages/template pod jménem template.properties):</p>
+            
+            
+                <p>BUNDLE_LANGUAGE_NAME=Deutsch</p>
+                <p>WINDOW_TITLE=PSimulator</p>
+                <p>FILE=File</p>
+                <p>EXIT=Exit</p>
+                <p>NEW_PROJECT=New Project...</p>
+                <p>CLOSE=Close</p>
+                <p>OPEN=Open...</p>
+                <p>OPEN_RECENT_FILE=Open recent file</p>
+                <p>EMPTY=Empty</p>
+                <p>SAVE=Save</p>
+                <p>SAVE_AS=Save As...</p>
+                <p>LANGUAGE=Language</p>
+                <p>PREFERENCES=Preferences</p>
+                <p>...</p>
+            
+            <p>Každý řádek obsahuje <b>klíč</b> (FILE) a <b>hodnotu</b> (File). Při překladu je 
+                potřeba přeložit všechny hodnoty. Jméno jazykového balíčku je
+                na prvním řádku (BUNDLE_LANGUAGE_NAME) a objeví se v programu
+                ve výběru jazyka.</p>
+
+            <p>Pokud přeložíte <b>všechny!</b> texty a žádný klíč neuberete,
+                pak program rozpozná Váš soubor jako validní jazykový balíček
+                a nabídne ho ve výběru jazyka.</p>
+            
+            <h2>Umístění</h2>
+            
+            <p>Váš jazykový soubor musí být umístěn v adresáři <b>Languages</b> vedle
+                spustitelných <b>.jar</b> souborů.</p>
+      
+        </div>
+    </body>
+</html>

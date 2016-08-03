@@ -1,0 +1,8 @@
+subprojects {
+	apply plugin: 'java'
+ 
+	repositories {
+		mavenCentral()
+		maven { url "https://clojars.org/repo" }
+	}
+}

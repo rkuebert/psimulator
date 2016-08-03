@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="Czech" />
+      <title>Příjem událostí, pohyb v seznamu</title>       <meta http-equiv="Content-Language" content="cz-CZ">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 2: Simualční režim</h3>
+            <ul>
+                <li><a href="./simulation_mode.html">Simulační režim</a></li>
+                <li><a href="./simulator_connecting.html">Připojení k simulátoru</a></li>
+                <li><a href="./event_recieve_list_move.html">Příjem událostí, pohyb v seznamu</a></li>
+                <li><a href="./event_playing.html">Přehrávání událostí</a></li>
+                <li><a href="./event_save_load.html">Uložení a načtení seznamu událostí</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Příjem událostí, pohyb v seznamu</h1>
+
+            <h2>Příjem událostí</h2>
+            
+            <p>Události začnete přijímat stisknutím tlačítka <b>Zachytávat</b> v ovládacím panelu:</p>
+
+            <img src="../../../../images/cz/capture_press.png" >
+
+            <p>Poté se budou v seznamu událostí objevovat nové události tak, jak budou přicházet ze
+                síťového simulátoru.</p>
+            
+            <h2>Popis seznamu událostí</h2>
+            
+            <p>Následuje ukázka zachycených událostí:</p>
+            
+            <img src="../../../../images/cz/event_list.png" >
+            
+            <h3>Jednotlivé údaje v seznamu</h3>
+            
+            <p>Každý řádek reprezentuje jednu zachycenou událost. Význam sloupečků je následující:</p>
+            
+            <ul>
+                <li><b>Čas[s]</b> - časová značka zachycení paketu. Vždy se počítá od 0,00.</li>
+                <li><b>Z</b> - jméno zařízení odkud byl vyslán paket.</li>
+                <li><b>Do</b> - jméno zařízení, kam byl vyslán paket.</li>
+                <li><b>Typ</b> - typ paketu.</li>
+                <li><b>Info</b> - barva specifická pro typ paketu.</li>
+            </ul>
+            
+            <h2>Detail události</h2>
+            
+            <p>Pokud je v seznamu událostí nějaká událost označena, pak je její detail vidět v <b>Detailu paketu</b>
+                pod tabulkou:</p>
+            
+            <img src="../../../../images/cz/packet_detail.png" >
+            
+            <p>V detailu jsou navíc informace o <b>rozhraních</b> zdrojové a cílové komponenty a <b>detailnější popis</b>.</p>
+      
+            <h2>Pohyb v seznamu událostí</h2>
+
+            <p>Do seznamu událostí se dostaneme klikem myši na některou událost. Dále se můžeme v seznamu
+                pohybovat <b>šipkami nahoru/doů</b>, či <b>tlačítky pro přehrávání</b>:</p>
+            
+            <img src="../../../../images/play_controls.png" >
+            
+            <p>Při změně aktuálního řádku se změní i detail paketu pod tabulkou.</p>          
+            
+            <h2>Smazání událostí</h2>
+            
+            <p>Seznam zachycených událostí je kdykoliv možné smazat tlačítkem <b>Smazat události</b>.</p>
+            
+            <img src="../../../../images/cz/event_list.png" >
+            
+            <p>Další částí tutorialu je: <a href="./event_playing.html">Přehrávání událostí</a>.</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Language" content="Czech" />
+      <title>Adding new lanugage</title>       <meta http-equiv="Content-Language" content="cz-CZ">
+  </head>
+    <body>
+        <div>
+            <h3>Tutorial 3: Advanced features</h3>
+            <ul>
+                <li><a href="./advanced_features.html">Automatic layout</a></li>
+                <li><a href="./telnet.html">Telnet for virtual device access</a></li>
+                <li><a href="./adding_new_language.html">Adding new lanugage</a></li>
+            </ul>
+            
+            <hr>
+            
+            <h1>Adding new lanugage</h1>
+
+            <p>You can add your own language into the program. The only thing you have to
+                do is to <b>place the file properly</b> and <b>respect the format</b> 
+                of the file.</p>
+
+            <h2>Format of the file</h2>
+            
+            <p>Format of the language file looks like this
+                (the template is located in Languages/template/template.properties file):</p>
+            
+            
+                <p>BUNDLE_LANGUAGE_NAME=Deutsch</p>
+                <p>WINDOW_TITLE=PSimulator</p>
+                <p>FILE=File</p>
+                <p>EXIT=Exit</p>
+                <p>NEW_PROJECT=New Project...</p>
+                <p>CLOSE=Close</p>
+                <p>OPEN=Open...</p>
+                <p>OPEN_RECENT_FILE=Open recent file</p>
+                <p>EMPTY=Empty</p>
+                <p>SAVE=Save</p>
+                <p>SAVE_AS=Save As...</p>
+                <p>LANGUAGE=Language</p>
+                <p>PREFERENCES=Preferences</p>
+                <p>...</p>
+            
+            <p>Each row contains a <b>key</b> (FILE) and a <b>value</b> (File).
+                You have to translate all values. The name that will be displayed
+                in the app in language selection is on the first row 
+                (BUNDLE_LANGUAGE_NAME).</p>
+
+
+            <p>When you translate <b>all</b> values and when you <b>do not delete</b>
+                any key and value, than your file will be recognized by the app as a 
+                valid one. Valid languages will be offered in language options.</p>
+            
+            <h2>Language file location</h2>
+            
+            <p>Your language file has to be located in  <b>Languages</b> directory:
+                <b>PSImulator2/Languages/</b> 
+                (located in PSImulator2 directory next to the <b>.jar</b> files).</p>
+     
+        </div>
+    </body>
+</html>

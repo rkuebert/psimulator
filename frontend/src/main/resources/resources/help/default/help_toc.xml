@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+            "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0" xml:lang="en-US">
+
+<tocitem text="Introduction" target="item000" image="topic" />
+
+<tocitem text="Tutorials" image="chapter" >
+    <tocitem text="1. Network creation" image="chapter" >
+        <tocitem text="Welcome screen" target="item100" image="topic" />
+        <tocitem text="New project creation" target="item101" image="topic" />
+        <tocitem text="Placing components into board" target="item102" image="topic" />
+        <tocitem text="Connecting components with cables" target="item103" image="topic" />
+        <tocitem text="Network manipulation" target="item104" image="topic" />
+        <tocitem text="Setting network components' properties" target="item105" image="topic" />
+        <tocitem text="Viewed details settings" target="item106" image="topic" />
+        <tocitem text="Saving the project" target="item107" image="topic" />
+    </tocitem>
+
+    <tocitem text="2. Simulation mode" image="chapter" >    
+        <tocitem text="Simulation mode" target="item201" image="topic" />
+        <tocitem text="Connecting to simulator" target="item202" image="topic" />
+        <tocitem text="Recieving events and move in event list" target="item203" image="topic" />
+        <tocitem text="Playing events" target="item204" image="topic" />
+        <tocitem text="Loading and saving events" target="item205" image="topic" />
+    </tocitem>
+
+    <tocitem text="3. Advanced functions" image="chapter" > 
+        <tocitem text="Atuomatic layout" target="item301" image="topic" />
+        <tocitem text="Telnet access to virtual devices" target="item302" image="topic" />
+        <tocitem text="Adding new language" target="item303" image="topic" />
+    </tocitem>
+
+</tocitem>
+
+<tocitem text="About project" target="item401" image="topic" />
+
+</toc>

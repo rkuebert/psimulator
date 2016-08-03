@@ -1,0 +1,48 @@
+
+Scénáře pro automatický testování:
+
+1. na pc1:
+	ping -c1 192.168.1.2
+		projde
+	ping -c1 192.168.1.20
+		projde
+	ping -c1 192.168.1.3
+		vrátí se destination host unreachable od 192.168.1.1
+	ping -c1 8.8.8.8
+		vrátí se destination net unreachable od 147.32.1.2
+	ping -c1 89.190.94.1
+		neprojde, přide time to live exceeded
+	ping -c1 147.32.125.234
+		neprojde, nevrátí a nevypíše se vůbec nic
+	ping -c1 147.32.1.6
+		projde
+	ping -c1 147.32.1.5
+		projde
+
+2. na pc0:
+	ping -c1 8.8.8.8
+		neprojde, vypíše: "connect: Network is unreachable" (bez uvozovek)
+
+pozn.: tyhle scénáře testujou veškerý možný varianty při posílání pingů
+
+
+3. na pc4:
+	ping -c1 192.168.1.1
+		ma vratit (za tím řetězcem může něco být): '64 bytes from 192.168.1.1: icmp_req=1 ttl=62'
+
+4. na pc5:
+	ping -c1 192.168.1.1
+		ma vratit (za tím řetězcem může něco být): '64 bytes from 192.168.1.1: icmp_req=1 ttl=62'
+
+
+Poznámky k jednotlivejm počítačům:
+
+pc1: má default gw na router0
+pc0: nemá defaultní bránu
+router0: maškaráda na odchozí rozhraní eth1, defaultní vrána na router1
+router1: žádná maškaráda ani defaultní brána, brána na 89.190.94.0/24 na pc2, brána na 147.32.125.128/25 na 147.32.1.10
+pc2: chybně nastavenej počítač, má defaultní bránu na router1 (pro testování time to live exceeded)
+pc3: chybně nastavenej počítač, nemá žádnou defaultní bránu (pro testování, kdy se nemá vrátit nic)
+pc4: defaultní brána na cisco1 
+pc5: defaultní brána na cisco1
+cisco1: defaultní brána na router0, statický překlad adres pc4 na 10.0.0.6, dynamický překlad adres pc5 na 10.0.0.5
