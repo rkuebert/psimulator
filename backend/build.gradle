@@ -25,16 +25,7 @@ dependencies {
 		compile "jnetpcap:jnetpcap:1.4.r1425-1f"
 }
 
-/*
-jar {
-    manifest {
-        attributes 'Main-Class': 'psimulator2.Main'
-    }
-}
-*/
 
-// Copy all dependencies to folder
-//task copyToLib(type: Copy) {
-//    into "$buildDir/output/lib"
-//    from configurations.runtime
-//}
+jar {
+	baseName 'psimulator-backend'
+}

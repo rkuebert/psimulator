@@ -24,3 +24,8 @@ dependencies {
 		compile group: 'net.java.timingframework', name: 'timingframework-swing', version: '4.1.0'
 		compile group: 'javax.help', name: 'javahelp', version: '2.0.05'
 }
+
+jar {
+	baseName 'psimulator-backend'
+}
+
