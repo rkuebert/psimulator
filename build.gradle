@@ -10,5 +10,5 @@ subprojects {
 	}
 
 
-	version = versioning.info.full
+	version = versioning.info.display
 }
