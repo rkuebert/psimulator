@@ -28,4 +28,13 @@ dependencies {
 
 jar {
 	baseName 'psimulator-backend'
+	manifest {
+    attributes(
+      'Main-Class': mainClassName
+    )
+  }
+}
+
+shadowJar {
+	baseName 'psimulator-backend'
 }
