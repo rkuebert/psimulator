@@ -11,7 +11,6 @@ import java.util.Date;
 import logging.Logger;
 import logging.LoggingCategory;
 import logging.networkEvents.EventServer;
-import shared.Components.HwComponentModel;
 import shared.Components.NetworkModel;
 import shared.Serializer.AbstractNetworkSerializer;
 import shared.Serializer.NetworkModelSerializerXML;
