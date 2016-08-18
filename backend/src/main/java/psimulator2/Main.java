@@ -35,11 +35,12 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        // TODO Generate build information via gradle - this is useless
         System.out.println("Starting Psimulator2, build " + format.format(new Date()));
 
         // check jvm version  ... 1.7 or higher
         Double jvmVersion = Double.parseDouble(System.getProperty("java.version").substring(0, 3));
-
+        
         if (jvmVersion < 1.7) { // lower versions than JVM 1.7 aka JRE 7 are not supported
             System.err.println("Please install JRE 7 or higher.");
             System.exit(1);
@@ -49,18 +50,23 @@ public class Main {
         Logger.setLogger();
 
         if (args.length < 1) {
+/*
             Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE,
                     "No configuration file attached, run again with configuration file as first argument.");
+*/
+            //args = new String[] { "/home/roland/git/psimulator/examples/simple-network.xml" };
         }
 
-        //parsovani parametru prikazovy radky:
+        // Parse command line arguments
         configFileName = args[0];
+        
+        
         int firstTelnetPort = 11000;
         if (args.length >= 2) {
             try {
                 firstTelnetPort = Integer.parseInt(args[1]);
             } catch (NumberFormatException ex) {
-                Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE, "Second argument " + args[1] + " is not port number. Using default value: " + firstTelnetPort);
+                Logger.log(Logger.WARNING, LoggingCategory.XML_LOAD_SAVE, "Second argument " + args[1] + " is not port number. Using default value: " + firstTelnetPort);
             }
         }
 
