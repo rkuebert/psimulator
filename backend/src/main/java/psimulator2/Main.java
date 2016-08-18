@@ -27,118 +27,116 @@ import utils.Util;
  */
 public class Main {
 
-	public static String configFileName;
-	private static DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    public static String configFileName;
+    private static DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
 
-		System.out.println("Starting Psimulator2, build "+format.format(new Date()));
+        System.out.println("Starting Psimulator2, build " + format.format(new Date()));
 
+        // check jvm version  ... 1.7 or higher
+        Double jvmVersion = Double.parseDouble(System.getProperty("java.version").substring(0, 3));
 
-		// check jvm version  ... 1.7 or higher
+        if (jvmVersion < 1.7) { // lower versions than JVM 1.7 aka JRE 7 are not supported
+            System.err.println("Please install JRE 7 or higher.");
+            System.exit(1);
+        }
 
-		Double jvmVersion = Double.parseDouble(System.getProperty("java.version").substring(0, 3));
+        // nejdriv se nastavi logger:
+        Logger.setLogger();
 
-		if (jvmVersion < 1.7) { // lower versions than JVM 1.7 aka JRE 7 are not supported
-			System.err.println("Please install JRE 7 or higher.");
-			System.exit(1);
-		}
+        if (args.length < 1) {
+            Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE,
+                    "No configuration file attached, run again with configuration file as first argument.");
+        }
 
-		// nejdriv se nastavi logger:
-		Logger.setLogger();
+        //parsovani parametru prikazovy radky:
+        configFileName = args[0];
+        int firstTelnetPort = 11000;
+        if (args.length >= 2) {
+            try {
+                firstTelnetPort = Integer.parseInt(args[1]);
+            } catch (NumberFormatException ex) {
+                Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE, "Second argument " + args[1] + " is not port number. Using default value: " + firstTelnetPort);
+            }
+        }
 
-		if (args.length < 1) {
-			Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE,
-					"No configuration file attached, run again with configuration file as first argument.");
-		}
+        int eventServerPort = 12000;
+        if (args.length >= 3) {
+            try {
+                eventServerPort = Integer.parseInt(args[2]);
+            } catch (NumberFormatException ex) {
+                Logger.log(Logger.WARNING, LoggingCategory.XML_LOAD_SAVE, "Third argument " + args[2] + " is not port number. Using default value: " + eventServerPort);
+            }
+        }
 
-		//parsovani parametru prikazovy radky:
-		configFileName = args[0];
-		int firstTelnetPort = 11000;
-		if (args.length >= 2) {
-			try {
-				firstTelnetPort = Integer.parseInt(args[1]);
-			} catch (NumberFormatException ex) {
-				Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE, "Second argument "+args[1]+" is not port number. Using default value: " + firstTelnetPort);
-			}
-		}
+        // serializace xml do ukladacich struktur:
+        AbstractNetworkSerializer serializer = new NetworkModelSerializerXML();	// vytvori se serializer
+        NetworkModel networkModel = null;
+        try {
 
-		int eventServerPort = 12000;
-		if (args.length >= 3) {
-			try {
-				eventServerPort = Integer.parseInt(args[2]);
-			} catch (NumberFormatException ex) {
-				Logger.log(Logger.WARNING, LoggingCategory.XML_LOAD_SAVE, "Third argument "+args[2]+" is not port number. Using default value: " + eventServerPort);
-			}
-		}
+            networkModel = serializer.loadNetworkModelFromFile(new File(configFileName));	// nacita se xmlko do ukladacich struktur
 
-		// serializace xml do ukladacich struktur:
-		AbstractNetworkSerializer serializer = new NetworkModelSerializerXML();	// vytvori se serializer
-		NetworkModel networkModel = null;
-		try {
+        } catch (SaveLoadException ex) {
+            Logger.log(Logger.DEBUG, LoggingCategory.XML_LOAD_SAVE, Util.stackToString(ex));
+            Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE, "Cannot load network model from: " + configFileName);
+        }
 
-			networkModel = serializer.loadNetworkModelFromFile(new File(configFileName));	// nacita se xmlko do ukladacich struktur
+        // nastaveni promennejch systemu pro telnet a pro ukladani:
+        TelnetProperties.setStartPort(firstTelnetPort);
+        Psimulator.getPsimulator().configModel = networkModel;
+        Psimulator.getPsimulator().lastConfigFile = configFileName;
 
-		} catch (SaveLoadException ex) {
-			Logger.log(Logger.DEBUG, LoggingCategory.XML_LOAD_SAVE, Util.stackToString(ex));
-			Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE, "Cannot load network model from: " + configFileName);
-		}
+        // samotnej start systemu z ukladacich struktur
+        Loader loader = new Loader(networkModel, configFileName);	// vytvari se simulator loader
+        loader.loadFromModel();	// simulator se startuje z tech ukladacich struktur
 
-		// nastaveni promennejch systemu pro telnet a pro ukladani:
-		TelnetProperties.setStartPort(firstTelnetPort);
-		Psimulator.getPsimulator().configModel = networkModel;
-		Psimulator.getPsimulator().lastConfigFile = configFileName;
+        // startovani telnetu:
+        TelnetD telnetDaemon;
+        Logger.log(Logger.INFO, LoggingCategory.TELNET, "Starting telnet listeners");
+        try {
 
-		// samotnej start systemu z ukladacich struktur
-		Loader loader = new Loader(networkModel, configFileName);	// vytvari se simulator loader
-		loader.loadFromModel();	// simulator se startuje z tech ukladacich struktur
+            telnetDaemon = TelnetD.createTelnetD(TelnetProperties.getProperties());
+            // @TODO pridat metodu na kontrolu obsazení portů
+            telnetDaemon.start();
 
-		// startovani telnetu:
-		TelnetD telnetDaemon;
-		Logger.log(Logger.INFO, LoggingCategory.TELNET, "Starting telnet listeners");
-		try {
+            Logger.log(Logger.INFO, LoggingCategory.TELNET, "Telnet listeners successfully started");
 
-			telnetDaemon = TelnetD.createTelnetD(TelnetProperties.getProperties());
-			// @TODO pridat metodu na kontrolu obsazení portů
-			telnetDaemon.start();
+        } catch (BootException ex) {
+            Logger.log(Logger.DEBUG, LoggingCategory.TELNET, ex.toString());
+            Logger.log(Logger.ERROR, LoggingCategory.TELNET, "Error occured when creating telnet servers.");
+        }
 
-			Logger.log(Logger.INFO, LoggingCategory.TELNET, "Telnet listeners successfully started");
+        // SETUP EVENT SERVER
+        int tryMark = 0;
+        int maxTryMark = 10;
 
-		} catch (BootException ex) {
-			Logger.log(Logger.DEBUG, LoggingCategory.TELNET, ex.toString());
-			Logger.log(Logger.ERROR, LoggingCategory.TELNET, "Error occured when creating telnet servers.");
-		}
+        while (true) {
+            if (Util.availablePort(eventServerPort)) {
+                break; // break while
+            }
+            Logger.log(Logger.WARNING, LoggingCategory.EVENTS_SERVER, "Port " + eventServerPort + " not available, using:" + (eventServerPort + 1));
 
-		// SETUP EVENT SERVER
-		int tryMark = 0;
-		int maxTryMark = 10;
+            tryMark++;
+            eventServerPort++;
 
-		while(true){
-			if(Util.availablePort(eventServerPort))
-				break; // break while
+            if (tryMark > maxTryMark) {
+                Logger.log(Logger.ERROR, LoggingCategory.EVENTS_SERVER, "Cannot start event server, no port available");
+            }
+        }
 
-			Logger.log(Logger.WARNING, LoggingCategory.EVENTS_SERVER, "Port "+eventServerPort+" not available, using:" + (eventServerPort+1) );
+        EventServer eventServer = new EventServer(eventServerPort);
+        Thread thread = new Thread(eventServer);
+        thread.start();
 
-			tryMark++;
-			eventServerPort++;
+        Psimulator.getPsimulator().eventServer = eventServer;
 
-			if(tryMark>maxTryMark)
-				Logger.log(Logger.ERROR, LoggingCategory.EVENTS_SERVER, "Cannot start event server, no port available");
-		}
+        Logger.addListener(eventServer.getListener().getPacketTranslator());
 
+        Logger.log("PACKET FLOW SERVER: ", Logger.IMPORTANT, LoggingCategory.EVENTS_SERVER, "Server sucessfully started, listening on port: " + eventServerPort);
 
-		EventServer eventServer = new EventServer(eventServerPort);
-		Thread thread = new Thread(eventServer);
-		thread.start();
-
-		Psimulator.getPsimulator().eventServer=eventServer;
-
-		Logger.addListener(eventServer.getListener().getPacketTranslator());
-
-		Logger.log("PACKET FLOW SERVER: ", Logger.IMPORTANT, LoggingCategory.EVENTS_SERVER, "Server sucessfully started, listening on port: " + eventServerPort);
-
-	}
+    }
 }
