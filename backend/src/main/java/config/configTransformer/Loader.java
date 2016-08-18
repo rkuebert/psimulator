@@ -443,19 +443,34 @@ public class Loader implements Loggable {
 	 * @param interface1
 	 * @return
 	 */
-	private Switchport findSwitchportFor(HwComponentModel component1, EthInterfaceModel interface1) {
-		for (Device device : s.devices) {
-			if (device.configID == component1.getId()) {
-				for (Switchport swp : device.physicalModule.getSwitchports().values()) {
-					if ((swp instanceof SimulatorSwitchport || swp instanceof SimulatorSwitchportV2) && swp.configID == interface1.getId()) {
-						return swp;
-					}
-				}
-			}
-		}
+    private Switchport findSwitchportFor(HwComponentModel hwComponent, EthInterfaceModel ethInterface) {
+        Logger.log(this,
+                Logger.DEBUG,
+                LoggingCategory.NETWORK_MODEL_LOAD_SAVE,
+                "Finding switchport for component " + hwComponent.getId() + " and interface " + ethInterface.
+                getId(),
+                null);
+        for (Device device : s.devices) {
+            if (device.configID == hwComponent.getId()) {
+                for (Switchport swp : device.physicalModule.getSwitchports().
+                        values()) {
+                    if ((swp instanceof SimulatorSwitchport || swp instanceof SimulatorSwitchportV2)
+                            && swp.configID == ethInterface.getId()) {
+                        Logger.log(this,
+                                Logger.INFO,
+                                LoggingCategory.NETWORK_MODEL_LOAD_SAVE,
+                                "Found switchport " + swp.configID,
+                                null);
+                        return swp;
+                    }
+                }
+            }
+        }
 
-		throw new LoaderException(String.format("Could not find Device with id=%d a for Switchport with id=%d", component1.getId(), interface1.getId()));
-	}
+        throw new LoaderException(String.format(
+                "Could not find switchport for component %d and interface %d",
+                hwComponent.getId(), ethInterface.getId()));
+    }
 
 	@Override
 	public String getDescription() {
