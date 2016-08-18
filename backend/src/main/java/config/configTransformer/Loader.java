@@ -37,7 +37,7 @@ import shared.Components.simulatorConfig.*;
  */
 public class Loader implements Loggable {
 
-	Psimulator s = Psimulator.getPsimulator();
+	Psimulator psimulator = Psimulator.getPsimulator();
 	/**
 	 * odkladaci mapa mezi ID a cislama switchportu
 	 * Klicem je id z konfiguraku, hodnotou je prirazeny cislo switchportu
@@ -63,7 +63,7 @@ public class Loader implements Loggable {
 
 	public Loader(NetworkModel networkModel, String configFileName) {
 		this.networkModel = networkModel;
-		this.configFilename=configFileName;
+		this.configFilename = configFileName;
 		projectName = configFilename.substring(0, configFilename.length());
 	}
 
@@ -81,14 +81,14 @@ public class Loader implements Loggable {
 					continue;
 				}
 
-				s.devices.add(createDevice(device));
+				psimulator.devices.add(createDevice(device));
 			}
 
-			if (s.devices.isEmpty()) {
+			if (psimulator.devices.isEmpty()) {
 				Logger.log(this, Logger.ERROR, LoggingCategory.NETWORK_MODEL_LOAD_SAVE, "No device was found in configuration file! Exiting. ", null);
 			}
 
-			if (s.devices.get(0).physicalModule instanceof PhysicMod) {
+			if (psimulator.devices.get(0).physicalModule instanceof PhysicMod) {
 				connectCables();
 			} else {
 				connectCablesV2();
@@ -450,7 +450,7 @@ public class Loader implements Loggable {
                 "Finding switchport for component " + hwComponent.getId() + " and interface " + ethInterface.
                 getId(),
                 null);
-        for (Device device : s.devices) {
+        for (Device device : psimulator.devices) {
             if (device.configID == hwComponent.getId()) {
                 for (Switchport swp : device.physicalModule.getSwitchports().
                         values()) {
