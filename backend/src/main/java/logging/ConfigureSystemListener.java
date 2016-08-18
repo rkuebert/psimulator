@@ -16,7 +16,7 @@ public class ConfigureSystemListener {
 		for (LoggingCategory category : LoggingCategory.values()) {
 			configuration.put(category, Logger.IMPORTANT);
 		}
-		configuration.put(LoggingCategory.NETWORK_MODEL_LOAD_SAVE, Logger.INFO);
+		configuration.put(LoggingCategory.NETWORK_MODEL_LOAD_SAVE, Logger.DEBUG);
 		configuration.put(LoggingCategory.NetworkAddressTranslation, Logger.INFO);
 		configuration.put(LoggingCategory.NET, Logger.INFO);
 
