@@ -18,7 +18,6 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
      * ethInterface ID.
      */
     private Map<Integer, EthInterfaceModel> interfacesMap;
-    // -------------------------------------------------------
     /**
      * Device name.
      */
@@ -40,26 +39,29 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
      */
     private Integer id;
     /**
-     * Nastaveni pocitace pro potreby simulatoru.
+     * Device specific configuration.
      */
     private DeviceSettings devSettings;
 
     public HwComponentModel(Integer id, HwTypeEnum hwType, String deviceName, List<EthInterfaceModel> ethInterfaces,
             int defaultZoomXPos, int defaultZoomYPos) {
 
-        // add values to variables
         this.id = id;
         this.hwType = hwType;
         this.name = deviceName;
         this.defaultZoomXPos = defaultZoomXPos;
         this.defaultZoomYPos = defaultZoomYPos;
 
-        // add interfaces to map
-        this.setInterfacesAsList(ethInterfaces);
+
+        this.interfacesMap = new LinkedHashMap<>();
+
+        for (EthInterfaceModel ethInterface : ethInterfaces) {
+            interfacesMap.put(ethInterface.getId(), ethInterface);
+        }
     }
 
     public HwComponentModel() {
-        this.interfacesMap = new LinkedHashMap<Integer, EthInterfaceModel>();
+        this.interfacesMap = new LinkedHashMap<>();
     }
 
     @XmlAttribute
@@ -73,9 +75,11 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
     }
 
     /**
-     * Gets first avaiable ethInterface, if no avaiable null is renturned
+     * Gets the first available ethInterface. If no interface is available,
+     * returns null.
      *
-     * @return
+     * @return the first available interface or <code>null</code> if no
+     *  interface is available
      */
     public EthInterfaceModel getFirstFreeInterface() {
         for (EthInterfaceModel ei : interfacesMap.values()) {
@@ -87,9 +91,11 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
     }
 
     /**
-     * finds out whether component has any free EthInterface
+     * Returns <code>true</code> if this component has an available EthInterface,
+     * <code>false</code> otherwise.
      *
-     * @return
+     * @return <code>true</code> if this component has an available EthInterface,
+     * <code>false</code> otherwise
      */
     public boolean hasFreeInterace() {
         for (EthInterfaceModel ei : interfacesMap.values()) {
@@ -101,10 +107,12 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
     }
 
     /**
-     * Gets interface names as array of Objects
-     * @return 
+     * Returns interface names as a an array of Objects
+     * 
+     * @return interface names as a an array of Objects
      */
     public Object[] getInterfacesNames() {
+        // FIXME Why on earth noth a List<String>?
         Object[] list = new Object[interfacesMap.size()];
 
         int i = 0;
@@ -116,12 +124,15 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
     }
 
     /**
-     * Gets ethInterface with specified ID
-     * @param id
-     * @return 
+     * Returns the ethInterface with the specified id
+     * 
+     * @param interfaceId the interface's id
+     * 
+     * @return the interface with the given id or <code>null</code> if no
+     *  interface with the given id exists
      */
-    public EthInterfaceModel getEthInterface(Integer id) {
-        return interfacesMap.get(id);
+    public EthInterfaceModel getEthInterface(Integer interfaceId) {
+        return interfacesMap.get(interfaceId);
     }
 
     /**
@@ -209,29 +220,12 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
         return interfacesMap.values();
     }
 
-    
-    @XmlTransient // do not store as a map, we need a reference to this object for JAXB, storing as List
     public Map<Integer, EthInterfaceModel> getInterfacesMap() {
         return interfacesMap;
     }
 
     public void setInterfacesMap(Map<Integer, EthInterfaceModel> interfacesMap) {
         this.interfacesMap = interfacesMap;
-    }
-
-    @XmlElement(name = "interface")
-    public List<EthInterfaceModel> getInterfacesAsList() {
-        return new ArrayList<EthInterfaceModel>(this.interfacesMap.values());
-    }
-
-    public void setInterfacesAsList(List<EthInterfaceModel> ethInterfaces) {
-
-        this.interfacesMap = new LinkedHashMap<Integer, EthInterfaceModel>();
-
-        for (EthInterfaceModel eth : ethInterfaces) {
-            interfacesMap.put(eth.getId(), eth);
-        }
-        
     }
     
     @Override
@@ -303,5 +297,28 @@ public final class HwComponentModel implements PositionInterface, NameInterface,
             default:
                 return 0;
         }
+    }
+    
+    /**
+     * Returns a string representation of this object.
+     * 
+     * @return a string representation of this object
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(String.format("*** HW component %s (%s) ***\n", this.getName(), this.getId()));
+        sb.append(String.format("\tType: %s\n", this.hwType.toString()));
+        sb.append(String.format("\tXPos: %s\n", this.defaultZoomXPos));
+        sb.append(String.format("\tYPos: %s\n", this.defaultZoomYPos));
+        sb.append("\tNumber of interfaces: ").append(this.interfacesMap.size()).append("\n");
+        
+        for (Map.Entry<Integer, EthInterfaceModel> entry : interfacesMap.entrySet()) {
+            EthInterfaceModel value = entry.getValue();
+            sb.append(String.format("\t\t%s\n", value.toString()));
+        }
+        
+        return sb.toString();
     }
 }

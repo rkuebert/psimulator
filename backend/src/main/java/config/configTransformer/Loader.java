@@ -220,7 +220,9 @@ public class Loader implements Loggable {
 		IpNetworkModule nm = new IpNetworkModule(pc);	// vytvoreni sitovyho modulu, pri nem se
 
 		//nahrani interfacu:
-		for (EthInterfaceModel ifaceModel : model.getInterfacesAsList()) {	// pro kazdy rozhrani
+                List<EthInterfaceModel> ethInterfaceModels = new ArrayList<EthInterfaceModel>(model.getInterfacesMap().values());
+                
+		for (EthInterfaceModel ifaceModel : ethInterfaceModels) {	// pro kazdy rozhrani
 
 			EthernetInterface ethInterface = nm.ethernetLayer.addInterface(ifaceModel.getName(), new MacAddress(ifaceModel.getMacAddress()));
 			// -> pridani novyho rozhrani ethernetovy vrstve, interface si jeste podrzim, abych mu moh pridavat switchporty
