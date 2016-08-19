@@ -100,6 +100,19 @@ public class NetworkCounterModel implements Serializable{
         this.nextNumberMap = nextNumberMap;
     }
     
-    
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("*** Network Counter Model ***\n");
+        sb.append("\tNext Id: " + this.nextId + "\n");
+        sb.append("\tNext MAC address: " + this.nextMacAddress + "\n");
+        
+        for (Map.Entry<HwTypeEnum, Integer> entry : nextNumberMap.entrySet()) {
+            HwTypeEnum key = entry.getKey();
+            Integer value = entry.getValue();
+            sb.append("\tNext number for HW type " + key.toString() + ": " + value.toString() + "\n");
+        }
+        
+        return sb.toString();
+    }
     
 }

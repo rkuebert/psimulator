@@ -173,41 +173,48 @@ public class CableModel implements AbstractComponentModel{
         this.id = id;
     }
 
-    /**
-     * Sets first componnent to cable.
-     * @param component1 
+     /**
+     * Sets the cable's first component.
+     * 
+     * @param component the cable's second component
      */
-    public void setComponent1(HwComponentModel component1) {
-        this.component1 = component1;
+    public void setComponent1(HwComponentModel component) {
+        this.component1 = component;
     }
 
     /**
-     * Sets second componnent to cable.
-     * @param component1 
+     * Sets the cable's second component.
+     * 
+     * @param component the cable's second component
      */
-    public void setComponent2(HwComponentModel component2) {
-        this.component2 = component2;
+    public void setComponent2(HwComponentModel component) {
+        this.component2 = component;
     }
 
     /**
-     * Sets first interface that is connected
-     * @param interface1 
+     * Sets the first connected interface. 
+     * 
+     * @param ethInterface the first connected interface
      */
-    public void setInterface1(EthInterfaceModel interface1) {
-        this.interface1 = interface1;
+    public void setInterface1(EthInterfaceModel ethInterface) {
+        this.interface1 = ethInterface;
     }
 
     /**
-     * Sets second interface that is connected
-     * @param interface1 
+     * Sets the second connected interface. 
+     * 
+     * @param ethInterface the second connected interface
      */
-    public void setInterface2(EthInterfaceModel interface2) {
-        this.interface2 = interface2;
+    public void setInterface2(EthInterfaceModel ethInterface) {
+        this.interface2 = ethInterface;
     }
     
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Cable id: %d, hw type: %s, delay: %d;", this.id, this.hwType.toString(), this.delay));
+        //sb.append(String.format(" connects %s on %s with %s on %s", this.interface1.getName(), this.component1.getName(), this.interface2.getName(), this.component2.getName()));
+        return sb.toString();
+    }
     
 }

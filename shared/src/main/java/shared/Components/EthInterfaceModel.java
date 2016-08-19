@@ -240,12 +240,32 @@ public class EthInterfaceModel implements NameInterface, AbstractComponentModel 
     }
 
     /**
-     * Sets interface on (true), or off (false)
+     * Sets interface to up or down.
      *
-     * @param isUp
+     * @param isUp the new interface status
      */
     public void setIsUp(boolean isUp) {
         this.isUp = isUp;
+    }
+    
+    /**
+     * Returns a string representation of this object.
+     *
+     * @return a string representation of this object
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("Id: %s, Name: %s, Up: %b, MAC: %s, IP: %s",
+                this.id.toString(), this.name, this.isUp, this.macAddress,
+                this.ipAddress));
+
+        if (this.hasCable() == true) {
+            sb.append(String.format(", cable id: %s", this.cable.getId()));
+        }
+
+        return sb.toString();
     }
 
 }
