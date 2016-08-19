@@ -228,5 +228,26 @@ public class NetworkModel implements Identifiable, Serializable{
         this.networkCounterModel = networkCounterModel;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("id: %s\n", this.id));
+        sb.append(String.format("last edited timestamp: %s\n", this.lastEditTimestamp));
+        sb.append(this.networkCounterModel.toString());
+        sb.append("Cables:\n");
+        for (Map.Entry<Integer, CableModel> cablesMapEntry : cablesMap.entrySet()) {
+            CableModel cable = cablesMapEntry.getValue();
+            sb.append(String.format("\t%s\n", cable.toString()));
+        }
+        
+        sb.append("HW components:\n");
+        for (Map.Entry<Integer, HwComponentModel> componentsMapEntry : componentsMap.entrySet()) {
+            Integer key = componentsMapEntry.getKey();
+            HwComponentModel hwComponent = componentsMapEntry.getValue();
+            sb.append(String.format("\t%s\n", hwComponent.toString()));
+        }
+        
+        return sb.toString();
+    }
     
 }
