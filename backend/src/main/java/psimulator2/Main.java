@@ -91,6 +91,8 @@ public class Main {
             Logger.log(Logger.ERROR, LoggingCategory.XML_LOAD_SAVE,
                     "Cannot load network model from: " + configFileName);
         }
+        System.out.println("Network model loaded successfully");
+        System.out.println(networkModel);
 
         // nastaveni promennejch systemu pro telnet a pro ukladani:
         TelnetProperties.setStartPort(firstTelnetPort);

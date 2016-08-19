@@ -176,6 +176,9 @@ public class SaveLoadManagerNetworkModel extends AbstractSaveLoadManager {
         
         // load network model
         NetworkModel networkModel = dataLayer.loadNetworkModelFromFile(fileToOpen);
+        
+        System.out.println("Network model loaded successfully");
+        System.out.println(networkModel.toString());
 
         // set saved timestamp and file name
         setLastSavedFile(fileToOpen);
