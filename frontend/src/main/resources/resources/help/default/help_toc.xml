@@ -27,7 +27,7 @@
     </tocitem>
 
     <tocitem text="3. Advanced functions" image="chapter" > 
-        <tocitem text="Atuomatic layout" target="item301" image="topic" />
+        <tocitem text="Automatic layout" target="item301" image="topic" />
         <tocitem text="Telnet access to virtual devices" target="item302" image="topic" />
         <tocitem text="Adding new language" target="item303" image="topic" />
     </tocitem>
