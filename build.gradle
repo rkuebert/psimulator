@@ -1,6 +1,9 @@
 	plugins {
 		id 'net.nemerosa.versioning' version '2.0.0'
 	}
+versioning {
+   releaseMode = 'snapshot'
+}
 subprojects {
 	apply plugin: 'java'
 
