@@ -31,6 +31,7 @@ import psimulator.userInterface.SimulatorEditor.UserInterfaceMainPanelState;
 import psimulator.userInterface.actionListerners.PreferencesActionListener;
 import shared.Components.NetworkModel;
 import shared.SimulatorEvents.SerializedComponents.SimulatorEventsWrapper;
+import shared.build.BuildVersion;
 
 /**
  *
@@ -81,7 +82,7 @@ public class MainWindow extends JFrame implements MainWindowInnerInterface, User
         // create tool bar
         jToolBar = new ToolBar(dataLayer);
 
-        this.setTitle(dataLayer.getString("WINDOW_TITLE"));
+        this.setTitle(dataLayer.getString("WINDOW_TITLE") + " " + BuildVersion.getBuildVersion());
 
         // set menu bar
         this.setJMenuBar(jMenuBar);
@@ -532,7 +533,7 @@ public class MainWindow extends JFrame implements MainWindowInnerInterface, User
         public void actionPerformed(ActionEvent e) {
             final String ABOUT =
                 "<HTML>" +
-                "<B>"+dataLayer.getString("WINDOW_TITLE")+"</B></BR>" +
+                "<B>"+dataLayer.getString("WINDOW_TITLE") + "&nbsp;" + BuildVersion.getBuildVersion() + "</B></BR>" +
                 "<P><BR>"+dataLayer.getString("ABOUT_author")+": <FONT COLOR=\"#0000ff\">Martin Švihlík</FONT></P>" +
                 "<P><BR></P>"+dataLayer.getString("ABOUT_text")+
                 "</HTML>";

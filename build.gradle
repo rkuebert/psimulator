@@ -12,6 +12,12 @@ subprojects {
 		maven { url "https://clojars.org/repo" }
 	}
 
-
 	version = versioning.info.display
+
+	jar {
+		manifest {
+			attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+	    }
+	}
 }

@@ -15,6 +15,7 @@ import shared.Components.NetworkModel;
 import shared.Serializer.AbstractNetworkSerializer;
 import shared.Serializer.NetworkModelSerializerXML;
 import shared.Serializer.SaveLoadException;
+import shared.build.BuildVersion;
 import telnetd.BootException;
 import telnetd.TelnetD;
 import telnetd.pridaneTridy.TelnetProperties;
@@ -36,8 +37,7 @@ public class Main {
     public static void main(String[] args) {
 
         // TODO Generate build information via gradle - this is useless
-        System.out.println("Starting Psimulator2, build " + format.format(
-                new Date()));
+        System.out.println("Starting Psimulator, version " + BuildVersion.getBuildVersion());
 
         // check jvm version  ... 1.7 or higher
         Double jvmVersion = Double.parseDouble(System.

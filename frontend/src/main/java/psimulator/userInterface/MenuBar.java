@@ -20,6 +20,7 @@ import psimulator.dataLayer.Enums.ObserverUpdateEventType;
 import psimulator.dataLayer.Singletons.ImageFactory.ImageFactorySingleton;
 import psimulator.userInterface.SimulatorEditor.DrawPanel.Enums.UndoRedo;
 import psimulator.userInterface.SimulatorEditor.DrawPanel.Enums.Zoom;
+import shared.build.BuildVersion;
 
 /**
  *
