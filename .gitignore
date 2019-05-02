@@ -1,5 +1,9 @@
 .gradle
 .nb-gradle*
+# IntelliJ IDEA
+.idea
+out/
 /*/build/
 /*/test/
 examples/*-DATA
+
