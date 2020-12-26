@@ -6,4 +6,9 @@ out/
 /*/build/
 /*/test/
 examples/*-DATA
+/**/*.iml
+# Gradle
+gradle/
+gradlew
+gradlew.bat
 
