@@ -247,7 +247,7 @@ public class Loader implements Loggable {
 				CiscoIPLayer layer = ((CiscoIPLayer) (nm.ipLayer));
 				ciscoSettings.put(layer, model.getDevSettings().getRoutingTabConfig());
 			} else {
-				for (Record record : model.getDevSettings().getRoutingTabConfig().getRecords()) { //pro vsechny zaznamy
+				for (shared.Components.simulatorConfig.Record record : model.getDevSettings().getRoutingTabConfig().getRecords()) { //pro vsechny zaznamy
 					IPwithNetmask adresat = new IPwithNetmask(record.getDestination(), 32, false);
 					IpAddress brana = null;
 					if (record.getGateway() != null) {
@@ -503,7 +503,7 @@ public class Loader implements Loggable {
 			wrapper.update(); // nasype IP z rozhrani
 
 			if (ciscoSettings.get(layer) != null) {
-				for (Record record : ciscoSettings.get(layer).getRecords()) { //pro vsechny zaznamy
+				for (shared.Components.simulatorConfig.Record record : ciscoSettings.get(layer).getRecords()) { //pro vsechny zaznamy
 					IPwithNetmask adresat = new IPwithNetmask(record.getDestination(), 32, false);
 					if (record.getGateway() != null) {
 						IpAddress brana = new IpAddress(record.getGateway());
